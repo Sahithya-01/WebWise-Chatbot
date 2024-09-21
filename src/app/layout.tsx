@@ -1,6 +1,6 @@
 // Import necessary types and functions from Next.js
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
+// import localFont from 'next/font/local'
 
 // Import global CSS styles
 import './globals.css'
