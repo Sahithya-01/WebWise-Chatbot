@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web Wise
+
+## Overview
+
+This project is a chat application built with Next.js. It uses a chat interface that dynamically handles messages and interacts with an AI backend. The application includes a chat UI, message handling, and integration with a Redis database.
+
+## Features
+
+- **Chat Interface**: A user-friendly chat interface where users can send and receive messages.
+- **AI Integration**: Utilizes AI models to generate chat responses.
+- **Dynamic URL Handling**: Chats are tied to specific URLs, enabling unique sessions based on the URL.
+- **Redis Integration**: Manages indexed URLs and chat histories using Redis.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Ensure you have the following installed:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js
+- npm or yarn
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository**:
 
-## Learn More
+   ```bash
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Configure environment variables**:
+   Create a `.env.local` file in the root of the project and add your environment variables. For example:
+   ```
+   REDIS_URL=your-redis-url
+   ```
 
-## Deploy on Vercel
+### Running the Application
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Start the development server**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+2. **Access the application**:
+   Open your browser and go to `http://localhost:3000`.
+
+### Using the Chat Feature
+
+To use the chat feature, navigate to a specific URL pattern:
+
+- **Example URL**: `http://localhost:3000/chat/your-topic`
+  - Replace `your-topic` with the desired chat topic or identifier.
+
+### Instructions on Root Page
+
+When you first run the application, you will land on the root page. Instructions are provided to guide you on how to access the chat feature:
+
+- Navigate to a URL in the format `http://localhost:3000/chat/your-topic` to start a chat.
+- Ensure to replace `your-topic` with the relevant chat identifier.
+- If you just visit the root URL, you won’t see the chat interface.
+
+### API Routes
+
+- **POST /api/chat-stream**: Handles incoming chat messages and communicates with the AI backend.
+
+### Components
+
+- **ChatInput.tsx**: Provides a text area for user input and a send button.
+- **ChatWrapper.tsx**: Manages the chat state and renders messages and input.
+- **Messages.tsx**: Displays a list of chat messages.
+- **Message.tsx**: Displays an individual chat message.
+
+### Libraries Used
+
+- **Next.js**: Framework for building the application.
+- **Redis**: In-memory data structure store used for managing chat states and indexing URLs.
+- **RagChat**: AI chat model integration.
