@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { cn } from "@/utils/utils";
+import {Inter} from "next/font/google"
+import Providers from "./components/Providers";
+
+
+const inter = Inter({subsets:["latin"]})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,10 +32,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(inter.className, 'min-h-screen antialiased')}
       >
-        {children}
+        <Providers>
+          <main className="h-screen dark text-foreground bg-background">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
-  );
+  )
 }

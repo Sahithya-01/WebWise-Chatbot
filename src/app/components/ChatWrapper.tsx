@@ -2,9 +2,11 @@
 
 import { useChat } from 'ai/react'
 import Messages from './Messages'
+import ChatInput from './ChatInput'
+
 
 const ChatWrapper = ({ sessionId }: { sessionId: string }) => {
-  const { messages, handleInputChange, handleSubmit,input } = useChat({
+  const { messages, handleInputChange, handleSubmit,input,setInput } = useChat({
     api: '/api/chat-stream',
     body: { sessionId },
   })
@@ -18,7 +20,7 @@ const ChatWrapper = ({ sessionId }: { sessionId: string }) => {
          <input className='text-black' value={input} onChange={handleInputChange} type="text" />
          <button type='submit'>send</button>
             </form>
-     
+     <ChatInput input={input} handleInputChange={handleInputChange} handleSubmit={handleSubmit} setInput={setInput}/>
     </div>
   )
 }
