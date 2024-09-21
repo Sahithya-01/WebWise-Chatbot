@@ -1,10 +1,12 @@
 import { cn } from '@/utils/utils'
 import { Bot, User } from 'lucide-react'
 
+// Message component to display chat messages
 interface MessageProps {
   content: string
   isUserMessage: boolean
 }
+
 const Message = ({ content, isUserMessage }: MessageProps) => {
   return (
     <div
@@ -17,7 +19,7 @@ const Message = ({ content, isUserMessage }: MessageProps) => {
         <div className="max-w-3xl mx-auto flex items-start gap-2.5">
           <div
             className={cn(
-              'size-10 shrink-0  aspect-square rounded-full border border-zinc-700 bg-zinc-900 flex justify-center items-center',
+              'size-10 shrink-0 aspect-square rounded-full border border-zinc-700 bg-zinc-900 flex justify-center items-center',
               {
                 'bg-ble-950 border-blue-700 text-zinc-200': isUserMessage,
               }
@@ -35,7 +37,9 @@ const Message = ({ content, isUserMessage }: MessageProps) => {
                 {isUserMessage ? 'You' : 'Website'}
               </span>
             </div>
-            <p className='text-sm font-normal py-2.5 text-gray-900 dark:text-white'>{content}</p>
+            <p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
+              {content}
+            </p>
           </div>
         </div>
       </div>

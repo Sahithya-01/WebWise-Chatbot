@@ -2,6 +2,7 @@ import { type Message as TMessage } from 'ai/react'
 import { MessageSquare } from 'lucide-react'
 import Message from './Message'
 
+// Messages component to display a list of chat messages
 interface MessageProps {
   messages: TMessage[]
 }
@@ -9,9 +10,7 @@ interface MessageProps {
 const Messages = ({ messages }: MessageProps) => {
   console.log(messages)
   return (
-    
     <div className="flex max-h-[calc(100vh-3.5rem-7rem)] flex-1 flex-col overflow-y-auto">
-
       {messages.length ? (
         messages.map((message, i) => (
           <Message
