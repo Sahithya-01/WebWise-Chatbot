@@ -17,19 +17,19 @@ import Providers from './components/Providers'
 // Load Inter font with latin subset
 const inter = Inter({ subsets: ['latin'] })
 
-// Load local Geist Sans font
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-})
+// // Load local Geist Sans font
+// const geistSans = localFont({
+//   src: './fonts/GeistVF.woff',
+//   variable: '--font-geist-sans',
+//   weight: '100 900',
+// })
 
-// Load local Geist Mono font
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
-})
+// // Load local Geist Mono font
+// const geistMono = localFont({
+//   src: './fonts/GeistMonoVF.woff',
+//   variable: '--font-geist-mono',
+//   weight: '100 900',
+// })
 
 // Define metadata for the application
 export const metadata: Metadata = {

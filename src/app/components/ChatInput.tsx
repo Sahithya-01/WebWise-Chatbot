@@ -18,7 +18,6 @@ interface ChatInputProps {
 const ChatInput = ({
   handleInputChange,
   handleSubmit,
-  input,
   setInput,
 }: ChatInputProps) => {
   return (
