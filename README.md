@@ -1,6 +1,3 @@
-Sure! Here's the content in `.md` format:
-
-````md
 # Web Wise
 
 ## Overview
@@ -82,8 +79,6 @@ Here is the step-by-step breakdown of how the app works:
 5. **`middleware.ts`** (Session Middleware)
    - Ensures each user has a unique session ID by setting a new session ID cookie if one is not already present.
 
----
-
 ## Getting Started
 
 ### Prerequisites:
@@ -101,7 +96,6 @@ Make sure you have the following tools installed:
    git clone <repository-url>
    cd <repository-folder>
    ```
-````
 
 2. **Install dependencies**:
 
